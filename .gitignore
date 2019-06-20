@@ -26,3 +26,5 @@
 
 *.jar
 target
+angular4j/src/main/frontend/.vscode/launch.json
+angular4j/src/main/frontend/.vscode/tasks.json
