@@ -1,9 +1,14 @@
 import {HttpClient, HttpParams} from '@angular/common/http'
-import {Injectable} from '@angular/core'
+import {EventEmitter,Injectable} from '@angular/core'
 import { Task } from './task.model';
+
 
 @Injectable()
 export class TaskService{
+
+
+	onTaskAdded = new EventEmitter<Task>();
+
 	constructor(private http: HttpClient){
 
 	}
@@ -22,5 +27,9 @@ export class TaskService{
 		//var response_ = this.http.post('/api/tasks/save',task);
 		
 		//return ;
+	}
+
+	addTask(task: Task){
+		return this.http.request("POST","/api/tasks/save",{responseType:"json",body:JSON.parse(JSON.stringify(task))});
 	}
 }
