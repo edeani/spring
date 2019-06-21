@@ -4,6 +4,7 @@ import com.realangular.demo.domain.Task;
 import com.realangular.demo.service.TaskService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ public class TaskController {
     }
 
     @PostMapping("/save")
-    public Task saveTask(Task task){
+    public Task saveTask(@RequestBody Task task){
         return this.taskService.save(task);
     }
 }
