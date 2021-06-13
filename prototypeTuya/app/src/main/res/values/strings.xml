@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">prototypeTuya</string>
+    <string name="title_activity_maps_tuya">MapsTuyaActivity</string>
 </resources>
